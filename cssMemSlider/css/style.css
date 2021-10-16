@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+
+:root {
+  color: #3a3a3a;
+  font-family: Montserrat, sans-serif;
+}
+
+.conainer {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+}
+
+.conainer__item {
+  background-color: aqua;
+}
+
+.slider {
+  width: 90%;
+  height: 100%;
+  display: grid;
+  overflow: hidden;
+  grid-template: 2fr 1fr / 4fr 1fr;
+  grid-template-areas: 'mem mem' 'desc navbar';
+}
+
+.slider__img-conatiner {
+  grid-area: mem;
+
+  background-color: red;
+}
+
+.slider__description-conatiner {
+  background-color: peru;
+  grid-area: desc;
+}
+
+.slider__nav-conatiner {
+  background-color: paleturquoise;
+  grid-area: navbar;
+}
