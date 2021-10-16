@@ -67,13 +67,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: green;
+}
+
+.slider__nav-label:hover {
+  transition: all 0.53s;
+}
+.slider__nav-label:hover > .slider__nav-point {
+  background-color: #fbfcff;
+  border: none;
 }
 
 .slider__nav-point {
+  border-radius: 50%;
+  background-color: #75aefe;
   height: 20px;
   width: 20px;
-  background-color: red;
+  transition: background-color 0.53s, border 0.53s;
   display: block;
 }
 
@@ -97,6 +106,79 @@
 
 .slider__slide-img {
   height: 100%;
+}
+
+#mem-1:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-1
+  > .slider__nav-point,
+#mem-2:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-2
+  > .slider__nav-point,
+#mem-3:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-3
+  > .slider__nav-point,
+#mem-4:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-4
+  > .slider__nav-point,
+#mem-5:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-5
+  > .slider__nav-point,
+#mem-6:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-6
+  > .slider__nav-point,
+#mem-7:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-7
+  > .slider__nav-point,
+#mem-8:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-8
+  > .slider__nav-point {
+  background-color: transparent;
+  border: 2px solid #75aefe;
+  transition: background-color 0.53s, border 0.53s;
+}
+
+#mem-1:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-1:hover
+  > .slider__nav-point,
+#mem-2:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-2:hover
+  > .slider__nav-point,
+#mem-3:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-3:hover
+  > .slider__nav-point,
+#mem-4:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-4:hover
+  > .slider__nav-point,
+#mem-5:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-5:hover
+  > .slider__nav-point,
+#mem-6:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-6:hover
+  > .slider__nav-point,
+#mem-7:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-7:hover
+  > .slider__nav-point,
+#mem-8:checked
+  ~ .slider__nav-conatiner
+  > .slider__nav-label-8:hover
+  > .slider__nav-point {
+  border: 2px solid #fbfcff;
+  transition: border 0.53s;
 }
 
 #mem-1:checked ~ .slider__mover > .slide-1 {
