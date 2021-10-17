@@ -13,11 +13,6 @@
   align-items: center;
   background-color: gray;
 }
-
-.conainer__item {
-  background-color: aqua;
-}
-
 .slider {
   width: 90%;
   height: 100%;
@@ -44,19 +39,17 @@
 
 .slider__img-conatiner {
   grid-area: mem;
-  background-color: red;
 }
 
 .slider__description-conatiner {
-  background-color: peru;
   grid-area: desc;
 }
 
 .slider__nav-conatiner {
-  background-color: paleturquoise;
   grid-area: navbar;
   display: flex;
   justify-content: space-around;
+  background-color: gray;
 }
 
 .slider__nav-label {
@@ -99,9 +92,9 @@
 .slider__slide {
   height: 100%;
   display: table-cell;
-  transition: all 0.53s;
   vertical-align: center;
   text-align: center;
+  transition: all 0.53s;
 }
 
 .slider__slide-img {
