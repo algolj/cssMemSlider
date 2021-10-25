@@ -5,6 +5,10 @@
   font-family: Montserrat, sans-serif;
 }
 
+body {
+  position: relative;
+}
+
 .conainer {
   height: 100%;
   margin: auto;

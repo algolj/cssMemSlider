@@ -1,0 +1,962 @@
+.warning {
+  height: 500px;
+  width: 600px;
+  padding: 20px 40px;
+  border-radius: 30px;
+  background-color: white;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+small {
+  font-size: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.warning__label {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.warning__li {
+  text-align: left;
+  list-style-type: disc;
+}
+
+.warning__h-mode {
+  margin-top: 30px;
+}
+
+.warning__paranoid,
+.warning__mode {
+  top: 0;
+  height: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: rgba(3, 3, 3, 0.4);
+  backdrop-filter: blur(0.4em);
+}
+
+.warning__paranoid {
+  display: none;
+}
+
+#paranoia:checked ~ .warning__mode,
+#normal:checked ~ .warning__mode {
+  display: none;
+}
+
+#paranoia:checked ~ .warning__paranoid {
+  display: flex;
+}
+
+.warning__paranoid-info-box {
+  height: 600px;
+  width: 500px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+}
+
+.warning__paranoid-info-box-title {
+  font-size: 1.6rem;
+  color: lightgreen;
+  text-align: center;
+}
+
+.warning__img {
+  cursor: url('../img/aim.png'), auto;
+  float: left;
+  margin: 5px auto;
+  position: relative;
+  align-self: center;
+}
+.warning__img:before {
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  content: '';
+  user-select: none;
+  display: block;
+  animation: opac 0.5s infinite linear;
+  background-image: url(../img/crest.svg);
+}
+
+@keyframes opac {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.paranoid__li {
+  list-style-type: disc;
+}
+
+.paranoid__joke {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.paranoid__desc {
+  text-align: justify;
+}
+
+.paranoid__list-desc {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.paranoid__batton {
+  margin: 10px 0px;
+  display: block;
+  background-color: lawngreen;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#paranoia_site:checked ~ .warning__paranoid {
+  display: none;
+}
+
+#paranoia_site:checked
+  ~ .conainer
+  > .slider
+  > .slider__nav-conatiner
+  > .paranoid__nav-label {
+  cursor: url('../img/aim.png') 14 0, auto;
+}
+.paranoid__nav-label > .slider__nav-point {
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url(../img/JS-pointer.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#paranoia_site:not(:checked)
+  ~ .conainer
+  > .slider
+  > .slider__nav-conatiner
+  > .paranoid__nav-label {
+  display: none;
+}
+
+#paranoia_site:checked
+  ~ .conainer
+  > .slider
+  > .slider__nav-conatiner
+  > [class*='slider__nav-label-'] {
+  display: none;
+}
+
+#paranoia_site:checked
+  ~ .conainer
+  > .slider
+  > .slider__nav-conatiner
+  > .paranoid__nav-label:hover
+  > .slider__nav-point {
+  opacity: 0.7;
+  animation: tremm 0.1s infinite linear;
+}
+
+#paranoia_site:checked ~ .conainer > .slider > .slider__description-conatiner,
+#paranoia_site:checked ~ .conainer > .slider > .slider__nav-conatiner {
+  background-color: #cbcaca;
+}
+
+@keyframes tremm {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+#mem-1:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-1
+  > .slider__nav-point,
+#mem-2:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-2
+  > .slider__nav-point,
+#mem-3:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-3
+  > .slider__nav-point,
+#mem-4:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-4
+  > .slider__nav-point,
+#mem-5:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-5
+  > .slider__nav-point,
+#mem-6:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-6
+  > .slider__nav-point,
+#mem-7:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-7
+  > .slider__nav-point,
+#mem-8:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-8
+  > .slider__nav-point {
+  background-image: url(../img/kill.svg);
+  transition: background-color 0.53s, border 0.53s;
+}
+
+#mem-1:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-1:hover
+  > .slider__nav-point,
+#mem-2:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-2:hover
+  > .slider__nav-point,
+#mem-3:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-3:hover
+  > .slider__nav-point,
+#mem-4:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-4:hover
+  > .slider__nav-point,
+#mem-5:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-5:hover
+  > .slider__nav-point,
+#mem-6:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-6:hover
+  > .slider__nav-point,
+#mem-7:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-7:hover
+  > .slider__nav-point,
+#mem-8:checked
+  ~ .slider__nav-conatiner
+  > .paranoid__nav-label-8:hover
+  > .slider__nav-point {
+  background-color: red;
+}
+
+.paranoid__nav-label:hover > .slider__nav-point {
+  background-color: transparent;
+}
+
+.paranoid__nav-label:active > .slider__nav-point {
+  transform: scale(1.5) !important;
+  background-size: 130%;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__visible {
+  display: block;
+}
+
+#paranoia_site:not(:checked) ~ .conainer > .paranoid__visible {
+  display: none;
+  visibility: hidden;
+}
+
+#paranoia_site:checked ~ .conainer {
+  font-family: Comic Sans MS;
+}
+
+#paranoia_site:checked ~ .conainer {
+  display: grid;
+  height: auto;
+  align-items: start;
+  width: 100%;
+  background-color: transparent;
+  background-image: url(https://oboi-download.ru/files/wallpapers/298/6488.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-template: 0.2fr 0.1fr 0.1fr 0.6fr 0.15fr 0.25fr 0.2fr 0.08fr/ 0.5fr 2fr 0.5fr;
+  grid-template-areas:
+    'header header header' 'nav nav nav' 'asidel warning asider'
+    'asidel memContainer asider' 'asidel plan asider' 'asidel pruff asider'
+    'asidel chat asider' 'footer footer footer';
+}
+
+@media screen and (max-width: 810px) {
+  #paranoia_site:checked ~ .conainer {
+    grid-template: 0.1fr 0.1fr 0.1fr 0.7fr 0.15fr 0.25fr 0.2fr 0.02fr/ 0.5fr 2fr 0.5fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:
+      'header header header' 'nav nav nav' 'asidel warning asider'
+      'asidel memContainer asider' 'asidel plan asider' 'asidel pruff asider'
+      'asidel chat asider' 'footer footer footer';
+  }
+  aside {
+    align-self: start;
+  }
+}
+
+.footer__cat {
+  height: 20%;
+  width: 12%;
+}
+
+@media screen and (max-width: 710px) {
+  #paranoia_site:checked ~ .conainer {
+    grid-template: 0.1fr 0.1fr 0.1fr 0.5fr 0.15fr 0.25fr 0.2fr 0.1fr/ 0.5fr 2fr 0.5fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:
+      'header header header' 'nav nav nav' 'asidel warning asider'
+      'asidel memContainer asider' 'asidel plan asider' 'asidel pruff asider'
+      'asidel chat asider' 'footer footer footer';
+  }
+}
+@media screen and (max-width: 600px) {
+  #paranoia_site:checked ~ .conainer {
+    grid-template: 0.1fr 0.1fr 0.1fr 0.7fr 1fr 0.15fr 0.25fr 0.2fr 0.02fr/ 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:
+      'header header' 'nav nav' ' warning warning'
+      'memContainer memContainer' 'asidel asider' 'plan plan' 'pruff pruff'
+      'chat chat' 'footer footer';
+  }
+  aside {
+    align-self: start;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #paranoia_site:checked ~ .conainer {
+    grid-template: 0.1fr 0.1fr 0.1fr 0.6fr 0.8fr 0.15fr 0.25fr 0.2fr 0.2fr/ 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:
+      'header header' 'nav nav' ' warning warning'
+      'memContainer memContainer' 'asidel asider' 'plan plan' 'pruff pruff'
+      'chat chat' 'footer footer';
+  }
+  .paranoid__menu {
+    flex-wrap: wrap;
+  }
+  #paranoia_site:checked ~ .conainer > .paranoid__header + .paranoid__visible {
+    padding: 10px;
+  }
+  .paranoid__visible > .paranoid__header-stop {
+    font-size: 4rem;
+  }
+  .paranoid__visible > .paranoid__header-text {
+    font-size: 3rem;
+  }
+}
+.mem__size {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (max-width: 300px) {
+  #paranoia_site:checked ~ .mem__size {
+    display: block;
+    background-image: url(../img/small.jpg);
+  }
+  .conainer,
+  .paranoid__visible {
+    display: none;
+    overflow: hidden;
+  }
+  body,
+  .paranoid__visible {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-height: 200px) {
+  #paranoia_site:checked ~ .mem__size {
+    display: block;
+    background-image: url(../img/small-h.jpg);
+  }
+  .conainer,
+  .paranoid__visible {
+    display: none;
+    overflow: hidden;
+  }
+  body,
+  .paranoid__visible {
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 2400px) {
+  #paranoia_site:checked ~ .mem__size {
+    display: block;
+    background-image: url(../img/big-w.jpg);
+  }
+  .conainer,
+  .paranoid__visible {
+    display: none;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  body,
+  .paranoid__visible {
+    overflow: hidden;
+  }
+}
+
+.footer__cat {
+  height: 20%;
+  width: 12%;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__header {
+  width: 80%;
+  height: 200px;
+  padding: 50px;
+  grid-area: header;
+  overflow: hidden;
+  justify-self: center;
+  text-align: center;
+  position: relative;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__nav {
+  width: 80%;
+  height: 80px;
+  padding: 20px;
+  background-color: black;
+  justify-self: center;
+  grid-area: nav;
+}
+
+.paranoid__menu {
+  display: flex;
+  justify-content: flex-start;
+  padding: 4px;
+  border: 2px solid #0fff00;
+}
+.paranoid__nav-text {
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 2px;
+  background-color: blue;
+}
+
+.paranoid__menu-item:before {
+  color: #ff0103;
+  content: '◍';
+  padding-right: 3px;
+}
+
+.menu__link {
+  font-family: monospace;
+  color: #0ee700;
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__warning {
+  grid-area: warning;
+  margin: 10px auto;
+  background-color: #cbcaca;
+  border: 4px double black;
+}
+
+#paranoia_site:checked
+  ~ .conainer
+  > .paranoid__warning
+  > .paranoid__warning-title {
+  background-color: #ff0201;
+  color: white;
+  padding: 7px 2px;
+  border: 4px double #cbcaca;
+}
+#paranoia_site:checked
+  ~ .conainer
+  > .paranoid__warning
+  > .paranoid__warning-text {
+  color: blue;
+  text-align: justify;
+  padding: 4px;
+}
+
+#paranoia_site:checked ~ .conainer > .slider {
+  grid-area: memContainer;
+  margin: 0 auto;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__aside-left {
+  grid-area: asidel;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__aside-right {
+  grid-area: asider;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__plan {
+  grid-area: plan;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__proof {
+  grid-area: pruff;
+}
+
+.paranoid__pruff-item {
+  margin-bottom: 10px;
+}
+
+.paranoid__pruff-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__chat {
+  grid-area: chat;
+}
+
+#paranoia_site:checked ~ .conainer > .paranoid__footer {
+  grid-area: footer;
+  text-align: center;
+}
+
+.paranoid__header-text {
+  width: 800;
+  font-size: 4rem;
+  background-color: #2aa5a0;
+  background-image: linear-gradient(
+    0deg,
+    #9b4841 0%,
+    #9b4841 40%,
+    #b2c3d9 60%,
+    #b2c3d9 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: ARIAL BLACK, sans-serifs;
+}
+
+.paranoid__header-stop {
+  font-family: FANTASY, Helvetica, sans-serif;
+  width: 800;
+  font-size: 6rem;
+  text-shadow: 4px 4px red;
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  transform: rotate(15deg);
+  animation: header-stop 0.5s infinite linear;
+}
+@keyframes header-stop {
+  0% {
+    transform: scale(1.2);
+    transform: rotate(16deg);
+    color: darkred;
+    text-shadow: 4px 4px red;
+  }
+
+  100% {
+    color: black;
+    transform: scale(1);
+    transform: rotate(15deg);
+    text-shadow: 2px 2px darkred;
+  }
+}
+
+.message {
+  margin: 3px 0;
+  border: 3px double black;
+  background-color: #cbcaca;
+  padding: 3px;
+}
+
+.message__time {
+  font-family: monospace;
+}
+
+.message__autor {
+  display: inline-block;
+}
+
+.message__text {
+  margin-top: 5px;
+  background-color: white;
+}
+
+.message__textarea {
+  display: block;
+  width: 100%;
+}
+
+.message__button {
+  margin: 4px 2px;
+  padding: 2px 4px;
+}
+
+.paranoid__news {
+  border: 4px double black;
+  margin: 10px 4px;
+  padding: 10px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #cbcaca;
+}
+
+.paranoid__news-cap {
+  max-width: 40%;
+  display: block;
+  animation: cap 0.4s infinite linear;
+}
+
+.paranoid__news-flat,
+.paranoid__news-big,
+.paranoid__news-zatmen,
+.paranoid__news-eye,
+.paranoid__news-reptil,
+.paranoid__news-map,
+.paranoid__news-cash {
+  position: relative;
+  overflow: hidden;
+}
+
+.paranoid__news-flat > a,
+.paranoid__news-big > a,
+.paranoid__news-zatmen > a,
+.paranoid__news-eye > a,
+.paranoid__news-reptil > a,
+.paranoid__news-map > a,
+.paranoid__news-cash > a {
+  z-index: 1;
+}
+
+.paranoid__news-flat > a,
+.paranoid__news-big > a {
+  color: white;
+}
+
+.paranoid__news-cash::before {
+  animation: cash 0.4s infinite linear;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url(../img/cash.jpg);
+  background-size: cover;
+}
+
+.paranoid__news-zatmen::before {
+  animation: cash 0.4s infinite linear;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url(https://ukranews.com/upload/news/2017/08/21/599ae7ef81df0-screenshot-4_1200.jpg);
+  background-size: 100%;
+}
+
+.paranoid__news-flat::before {
+  animation: reptil 1s infinite linear;
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 130%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url(https://www.ixbt.com/img/n1/news/2019/1/1/2019-02-18-image-5_large.jpg);
+  background-size: contain;
+}
+
+.paranoid__news-big::before {
+  animation: map 1.4s infinite linear;
+  content: '';
+  position: absolute;
+  width: 180%;
+  height: 150%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url(https://avatars.mds.yandex.net/get-zen_doc/1864855/pub_5e567afa23af6e788c223a03_5e567b3a5a0acf593cd9b572/scale_1200);
+  background-size: cover;
+}
+
+.paranoid__news-map::before {
+  animation: map 1.4s infinite linear;
+  content: '';
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url(../img/map.jpg);
+  background-size: cover;
+}
+
+.paranoid__news-reptil::before {
+  animation: reptil 1s infinite linear;
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url(../img/reptil.jpg);
+  background-size: cover;
+}
+
+.paranoid__news-eye::before {
+  animation: cash 0.4s infinite linear;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url(../img/eye.jpg);
+  background-size: cover;
+}
+
+@keyframes reptil {
+  0% {
+    left: 0;
+  }
+
+  70% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes map {
+  0% {
+    top: -8%;
+    left: -8%;
+  }
+  30% {
+    top: -40%;
+    left: -32%;
+  }
+  70% {
+    top: -30%;
+    left: -70%;
+  }
+  84% {
+    top: -37%;
+    left: -54%;
+  }
+  100% {
+    top: -8%;
+    left: -8%;
+  }
+}
+
+@keyframes cash {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.4);
+  }
+
+  70% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cap {
+  0% {
+    max-width: 40%;
+    transform: rotate(-6deg);
+  }
+  30% {
+    max-width: 45%;
+    transform: rotate(0deg);
+  }
+
+  70% {
+    max-width: 50%;
+    transform: rotate(6deg);
+  }
+  100% {
+    max-width: 40%;
+    transform: rotate(-6deg);
+  }
+}
+
+.paranoid__news-rotate {
+  position: relative;
+  overflow: hidden;
+}
+
+.paranoid__news-space > a,
+.paranoid__news-rotate > a {
+  font-size: 1.4em;
+  z-index: 1;
+  color: #0fff00;
+}
+
+.paranoid__news-rotate::before {
+  animation: rotate 0.4s infinite linear;
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: 0;
+  background: conic-gradient(
+    red 0%,
+    red 0%,
+    red 5%,
+    red 5%,
+    white 5%,
+    white 5%,
+    white 10%,
+    white 10%,
+    red 10%,
+    red 10%,
+    red 15%,
+    red 15%,
+    white 15%,
+    white 15%,
+    white 20%,
+    white 20%,
+    red 20%,
+    red 20%,
+    red 25%,
+    red 25%,
+    white 25%,
+    white 25%,
+    white 30%,
+    white 30%,
+    red 30%,
+    red 30%,
+    red 35%,
+    red 35%,
+    white 35%,
+    white 35%,
+    white 40%,
+    white 40%,
+    red 40%,
+    red 40%,
+    red 45%,
+    red 45%,
+    white 45%,
+    white 45%,
+    white 50%,
+    white 50%,
+    red 50%,
+    red 50%,
+    red 55%,
+    red 55%,
+    white 55%,
+    white 55%,
+    white 60%,
+    white 60%,
+    red 60%,
+    red 60%,
+    red 65%,
+    red 65%,
+    white 65%,
+    white 65%,
+    white 70%,
+    white 70%,
+    red 70%,
+    red 70%,
+    red 75%,
+    red 75%,
+    white 75%,
+    white 75%,
+    white 80%,
+    white 80%,
+    red 80%,
+    red 80%,
+    red 85%,
+    red 85%,
+    white 85%,
+    white 85%,
+    white 90%,
+    white 90%,
+    red 90%,
+    red 90%,
+    red 95%,
+    red 95%,
+    white 95%,
+    white 95%,
+    white 100%
+  );
+}
+.paranoid__news-space {
+  overflow: hidden;
+  position: relative;
+}
+
+.paranoid__news-space::before {
+  animation: rotate 0.4s infinite linear;
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: 0;
+  background-image: url(../img/space.jpg);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(35deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
